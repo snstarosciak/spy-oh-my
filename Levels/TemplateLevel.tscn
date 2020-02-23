@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Tiles/Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://GFX/Tilesheet/tilesheet_complete.png" type="Texture" id=2]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Interface/VisionMode.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Interface/GUI.tscn" type="PackedScene" id=5]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 60, 16, 60, 44, 52, 52, 12, 52, 8, 44, 8, 16, 12, 16, 16, 12, 48, 12, 52, 16 )
@@ -300,3 +301,5 @@ current = true
 [node name="Doors" type="Node" parent="."]
 
 [node name="LockedDoors" type="Node" parent="."]
+
+[node name="GUI" parent="." instance=ExtResource( 5 )]

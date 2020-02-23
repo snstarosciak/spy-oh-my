@@ -2,6 +2,12 @@ extends "res://Characters/TemplateCharacter.gd"
 
 var motion = Vector2()
 
+# Specify some properties via script, instead of thorugh editor
+onready var Notifier = $Notifier
+
+func _ready():
+    Notifier.hide()
+
 func _physics_process(delta):
     update_movement()
     move_and_slide(motion)
@@ -36,3 +42,8 @@ func _input(event):
 #            path = navigation.get_simple_path(position, event.position, false)
         
         
+func show_can_interact(can_interact):
+    if can_interact:
+        $Notifier.show()
+    else:
+        $Notifier.hide()

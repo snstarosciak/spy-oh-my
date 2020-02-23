@@ -8,6 +8,7 @@ onready var destinations = navigation.get_node("Destinations")
 var motion
 var possible_destinations
 var path
+var minimap_icon = "guard"
 
 export var minimum_arrival_distance = 5
 export var walk_speed = 0.5

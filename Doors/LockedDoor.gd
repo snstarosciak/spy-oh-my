@@ -3,8 +3,8 @@ extends "res://Doors/Door.gd"
 onready var Numpad = $CanvasLayer/Numpad
 
 func _ready():
-    generate_combination()
-
+    $Label.rect_rotation = -rotation_degrees
+    
 func _on_Door_input_event(viewport, event, shape_idx):
     if Input.is_mouse_button_pressed(BUTTON_LEFT) and can_click:
         Numpad.popup_centered()
@@ -24,8 +24,7 @@ func _on_Numpad_combination_correct():
 func door_closed():
     can_click = true
 
-func generate_combination():
-    var length = 3
-    var combination = CombinationGenerator.generate_combination(length)
-    $CanvasLayer/Numpad.combination = combination
-    print(str(combination))
+
+func _on_Computer_combination(numbers, lock_group):
+    $Label.text = lock_group
+    $CanvasLayer/Numpad.combination = numbers
